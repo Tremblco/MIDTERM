@@ -23,11 +23,25 @@ public class Status {
      */
     public static void main(String[] args)
     {
+    int size = 4;
+    int counter =0;
+    
+    StausUser[] user = new StausUser[size];
     Scanner in =new Scanner(System.in);
-    System.out.println("Enter the user status code (zero,one,two,three) in string");
-    String code = in.next();
-    StausUser t= new StausUser();
-    t.statusDetail(code); 
+    System.out.println("Here is a list of all the status using ENUMs: ");
+    
+    for (StausUser.Status s :  StausUser.Status.values() )
+    {
+         user[counter] = new StausUser(s);
+         counter++;
+    }
+    
+    for (StausUser ss: user)
+    {
+        System.out.println(ss.getStatus() );
+    }
+    
+    
     }
     
 }
